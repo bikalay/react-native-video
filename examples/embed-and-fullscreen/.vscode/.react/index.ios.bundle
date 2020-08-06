@@ -80533,6 +80533,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     posterResizeMode: _reactNative.Image.propTypes.resizeMode,
     repeat: _propTypes.default.bool,
     allowsExternalPlayback: _propTypes.default.bool,
+    allowsPictureInPicturePlayback: _propTypes.default.bool,
     selectedAudioTrack: _propTypes.default.shape({
       type: _propTypes.default.string.isRequired,
       value: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number])
