@@ -1053,7 +1053,7 @@ static int const RCTVideoUnset = -1;
   [self setRepeat:_repeat];
   [self setPaused:_paused];
   [self setControls:_controls];
-  [self setAllowsExternalPlayback:];
+  [self setAllowsExternalPlayback:_allowsExternalPlayback];
   [self setAllowsPictureInPicturePlayback:_allowsPictureInPicturePlayback];
 }
 
