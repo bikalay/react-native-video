@@ -152,6 +152,7 @@ static int const RCTVideoUnset = -1;
     viewController.showsPlaybackControls = YES;
     viewController.rctDelegate = self;
     viewController.preferredOrientation = _fullscreenOrientation;
+    viewController.allowsPictureInPicturePlayback = NO;
 
     viewController.view.frame = self.bounds;
     viewController.player = player;
