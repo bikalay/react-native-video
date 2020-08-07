@@ -82,10 +82,10 @@ static int const RCTVideoUnset = -1;
 #if __has_include(<react-native-video/RCTVideoCache.h>)
   RCTVideoCache * _videoCache;
 #endif
-#if TARGET_OS_IOS
+/*#if TARGET_OS_IOS
   void (^__strong _Nonnull _restoreUserInterfaceForPIPStopCompletionHandler)(BOOL);
   AVPictureInPictureController *_pipController;
-#endif
+#endif*/
 }
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
@@ -116,9 +116,9 @@ static int const RCTVideoUnset = -1;
     _pictureInPicture = false;
     _ignoreSilentSwitch = @"inherit"; // inherit, ignore, obey
     _mixWithOthers = @"inherit"; // inherit, mix, duck
-#if TARGET_OS_IOS
+/*#if TARGET_OS_IOS
     _restoreUserInterfaceForPIPStopCompletionHandler = NULL;
-#endif
+#endif*/
 #if __has_include(<react-native-video/RCTVideoCache.h>)
     _videoCache = [RCTVideoCache sharedInstance];
 #endif
@@ -847,7 +847,7 @@ static int const RCTVideoUnset = -1;
 
 - (void)setPictureInPicture:(BOOL)pictureInPicture
 {
-  #if TARGET_OS_IOS
+  /*#if TARGET_OS_IOS
   if (_pictureInPicture == pictureInPicture) {
     return;
   }
@@ -862,10 +862,10 @@ static int const RCTVideoUnset = -1;
       [_pipController stopPictureInPicture];
 	});
   }
-  #endif
+  #endif*/
 }
 
-#if TARGET_OS_IOS
+/*#if TARGET_OS_IOS
 - (void)setRestoreUserInterfaceForPIPStopCompletionHandler:(BOOL)restore
 {
   if (_restoreUserInterfaceForPIPStopCompletionHandler != NULL) {
@@ -881,7 +881,7 @@ static int const RCTVideoUnset = -1;
     _pipController.delegate = self;
   }
 }
-#endif
+#endif*/
 
 - (void)setIgnoreSilentSwitch:(NSString *)ignoreSilentSwitch
 {
@@ -1398,9 +1398,9 @@ static int const RCTVideoUnset = -1;
 
     [self.layer addSublayer:_playerLayer];
     self.layer.needsDisplayOnBoundsChange = YES;
-    #if TARGET_OS_IOS
+    /*#if TARGET_OS_IOS
     [self setupPipController];
-    #endif
+    #endif*/
   }
 }
 
@@ -1668,6 +1668,7 @@ static int const RCTVideoUnset = -1;
 
 #pragma mark - Picture in Picture
 
+/*
 #if TARGET_OS_IOS
 - (void)pictureInPictureControllerDidStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
   if (self.onPictureInPictureStatusChanged) {
@@ -1705,5 +1706,6 @@ static int const RCTVideoUnset = -1;
   _restoreUserInterfaceForPIPStopCompletionHandler = completionHandler;
 }
 #endif
+*/
 
 @end
